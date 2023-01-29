@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductDashboardComponent } from './product-dashboard/product-dashboard.component';
 import { Routes, RouterModule} from '@angular/router';
-
+import { ProductWidgetComponent } from './product-widget/product-widget.component';
+import { ProductDashboardComponent } from './product-dashboard/product-dashboard.component';
 const routes: Routes = [
   {path:'',component:ProductDashboardComponent}
 ];
 
 @NgModule({
   declarations: [
-    ProductDashboardComponent
+    ProductDashboardComponent,
+    ProductWidgetComponent
   ],
   imports: [
     CommonModule,

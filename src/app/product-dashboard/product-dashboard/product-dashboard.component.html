@@ -1,1 +1,15 @@
-<p>product-dashboard works! Lazy loading example.</p>
+<div class="row">
+    <div class="col-md-6">
+        <app-product-widget [products]="salesProducts">
+            <h1 class="header">Clearance store</h1>
+            <a href="" class="link">Visit Store..</a>
+        </app-product-widget>
+    </div>    
+    <div class="col-md-6">        
+        <app-product-widget [products]="topProducts">
+            <h1 class="header">Tops pics of the day</h1>
+            <a href="" class="link">See More..</a>
+        </app-product-widget>
+    </div>  
+</div>
+
