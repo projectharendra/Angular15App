@@ -1,0 +1,26 @@
+
+<div class="container my-4">
+    <div class="card">
+        <div class="card-header">
+            <h4>Parent Component</h4>
+        </div>
+        <div class="card-body">
+
+         <div>
+                Pass data to child component:<input type="text" [(ngModel)]="userName" class="form-control"/>
+            </div>
+           <!-- <div class="my-2">
+            <input type="button" value="Send" (click)="TransferDataFromParentToChild()" class="btn btn-primary">
+           </div>  -->
+           <app-childdemo [parentData]="userName"></app-childdemo> 
+
+            <h2>Data from child to parent</h2>           
+          <app-childdemo1 (notify)="parentMethod($event)"></app-childdemo1>       
+             {{childData}}
+        </div>
+    </div>
+    
+
+</div>
+
+

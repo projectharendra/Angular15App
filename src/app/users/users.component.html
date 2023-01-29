@@ -1,0 +1,26 @@
+<h1 class="text-center">User List</h1>
+
+<div class="container">  
+  
+    <!--  {{userList | json}} -->
+    <input type="submit" routerLink="/adduser" class="btn btn-danger" value="Add User">
+
+    <table class="table table-bordered">
+        <tr class="bg-muted">
+            <th>Id</th>
+            <th>Name</th>
+            <th>User Name</th>
+            <th>Email</th>
+            
+        </tr>
+        <tr *ngFor="let user of userList">
+          <!-- <td><a routerLink="/user/2">{{user.ID}}</a></td> -->
+          <td><a [routerLink]="['/user',user.ID]">{{user.ID}}</a></td>
+          <td>{{user.NAME}}</td>
+          <td>{{user.USERNAME}}</td>
+          <td>{{user.EMAIL}}</td> 
+        </tr>
+    </table>
+    
+    
+</div>
