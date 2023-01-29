@@ -1,12 +1,13 @@
-<div class="col px-md-2">  
- <nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
-  <!-- <nav class="navbar navbar-expand-lg navbar bg-dark"  > -->
+<div class="col px-md-2">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!-- <nav class="navbar navbar-expand-lg navbar bg-dark"  > -->
 
     <a class="navbar-brand" href="#">
-        <img src="assets/images/people.png" class="headerlogo">
-        <!-- User Management -->
+      <img src="assets/images/people.png" class="headerlogo">
+      <!-- User Management -->
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -14,53 +15,57 @@
         <li class="nav-item active">
           <a class="nav-link" routerLink="/users">Users <span class="sr-only">(current)</span></a>
         </li>
-       
+
         <li class="nav-item">
-            <a class="nav-link" routerLink="/department">Departments</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/employee-list">Employee List</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/employee">Employees</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/registration">Registration</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/aggrid">AG-Grid</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/product">Product</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/hooks">Hooks</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/viewchild">View Child</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/prcom">P.R. Communication</a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/about',{
+          <a class="nav-link" routerLink="/department">Departments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/employee-list">Employee List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/employee">Employees</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/registration">Registration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/aggrid">AG-Grid</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/product">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/hooks">Hooks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/viewchild">View Child</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/prcom">P.R. Communication</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/about',{
               outlets: {
                 'map': ['location'],
                 'feeds':['feedback']
               }
               }]">About</a>
-          </li>  
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/contact">Contact</a>
-          </li>
-       <!--  <li class="nav-item">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact">Contact</a>
+        </li>
+        <!--  <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li> -->
       </ul>
     </div>
   </nav>
 
- 
-<router-outlet></router-outlet> 
-</div>
 
+  <router-outlet></router-outlet>
+
+  <!-- <div style="margin: 40px">
+    <button (click)="throwError()">Error</button>
+    <button (click)="throwHttpError()">HTTP</button>
+  </div> -->
+</div>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { DepartmentComponent } from './department/department.component';
 import { ShowDepComponent } from './department/show-dep/show-dep.component';
 import { AddEditDepComponent } from './department/add-edit-dep/add-edit-dep.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -42,6 +42,9 @@ import { AgGridComponent } from './ag-grid/ag-grid/ag-grid.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { CounterComponent } from './viewchild/counter/counter.component';
 import { ViewchildComponent } from './viewchild/viewchild.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { GlobalErrorHandler } from './global-error-handler';
+import { ServerErrorInterceptor } from './server-error.interceptor';
 
 
 @NgModule({
@@ -70,14 +73,14 @@ import { ViewchildComponent } from './viewchild/viewchild.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,MatSnackBarModule,
     MaterialModule,HooksModule,AngularCrudModule,AgGridModule
-    
-    
-      
   ],
-  providers: [SharedService,UsersService,MasterService,
-    AuthGuard,AdminGuard,UnsavedChangesGuard,ResolveGuard],
+  providers: [ { provide: ErrorHandler, useClass: GlobalErrorHandler },
+               { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true },
+              SharedService,UsersService,MasterService,
+              AuthGuard,AdminGuard,UnsavedChangesGuard,ResolveGuard             
+            ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

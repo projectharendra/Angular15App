@@ -11,6 +11,4 @@ _url = 'http://localhost:33115/api/Registration';
   register(userData:any){
     return this._http.post<any>(this._url,userData);
   }
-
-
 }

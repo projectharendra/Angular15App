@@ -7,7 +7,8 @@ import {Observable} from 'rxjs';
 })
 export class UsersService {
 
-
+  //FAKE JSON DATA
+  //https://jsonplaceholder.typicode.com/
 
   readonly apiurl = 'http://localhost:33115/api';
   constructor(private http: HttpClient) { }
@@ -17,7 +18,10 @@ export class UsersService {
   }
  */
   getAllUsers():Observable<User>{
-    return this.http.get<User>(this.apiurl +'/User/GetAllUsers'); 
+    
+      return this.http.get<User>(this.apiurl +'/User/GetAllUsers'); 
+    
+   
    } 
 
    getUserDetailById(id: number){
