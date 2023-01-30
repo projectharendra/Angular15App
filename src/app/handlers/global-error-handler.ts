@@ -1,8 +1,8 @@
 import { ErrorHandler, Injectable, Injector } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import { ErrorService } from './services/error/error.service';
-import { LoggingService } from './services/error/logging.service';
-import { NotificationService } from './services/error/notification.service';
+import { ErrorService } from '../services/error/error.service';
+import { LoggingService } from '../services/error/logging.service';
+import { NotificationService } from '../services/error/notification.service';
 
 
 @Injectable()

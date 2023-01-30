@@ -43,8 +43,10 @@ import { AgGridModule } from 'ag-grid-angular';
 import { CounterComponent } from './viewchild/counter/counter.component';
 import { ViewchildComponent } from './viewchild/viewchild.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { GlobalErrorHandler } from './global-error-handler';
-import { ServerErrorInterceptor } from './server-error.interceptor';
+import { GlobalErrorHandler } from './handlers/global-error-handler';
+import { ServerErrorInterceptor } from './interceptor/server-error.interceptor';
+import { HeaderInterceptor } from './interceptor/header.interceptor';
+import { LoggingInterceptor } from './interceptor/logging.interceptor';
 
 
 @NgModule({
@@ -78,6 +80,8 @@ import { ServerErrorInterceptor } from './server-error.interceptor';
   ],
   providers: [ { provide: ErrorHandler, useClass: GlobalErrorHandler },
                { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true },
+               { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
+               { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
               SharedService,UsersService,MasterService,
               AuthGuard,AdminGuard,UnsavedChangesGuard,ResolveGuard             
             ],
