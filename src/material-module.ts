@@ -11,6 +11,9 @@ import { MatSelectModule } from "@angular/material/select"
 import { MatRadioModule } from "@angular/material/radio"
 import { MatCheckboxModule } from "@angular/material/checkbox"
 import { MatTableExporterModule } from 'mat-table-exporter';
+import { MatCardModule } from "@angular/material/card";
+
+
 
 @NgModule({
     exports:[
@@ -24,8 +27,12 @@ import { MatTableExporterModule } from 'mat-table-exporter';
         MatSelectModule,
         MatRadioModule,
         MatCheckboxModule,
-        MatTableExporterModule
-                  
+        MatTableExporterModule,
+        MatCardModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule
 
     ]
 })

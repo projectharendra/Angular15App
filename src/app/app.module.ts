@@ -47,41 +47,35 @@ import { GlobalErrorHandler } from './handlers/global-error-handler';
 import { ServerErrorInterceptor } from './interceptor/server-error.interceptor';
 import { HeaderInterceptor } from './interceptor/header.interceptor';
 import { LoggingInterceptor } from './interceptor/logging.interceptor';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { NtEmpModule } from './nt-emp/nt-emp.module';
+import { TokenInterceptor } from './interceptor/token.interceptor';
+import { StatusComponent } from './status/status.component';
+import { AccessModule } from './access/access.module';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DepartmentComponent,
-    ShowDepComponent,
-    AddEditDepComponent,
-    EmployeeComponent,
-    ShowEmpComponent,
-    AddEditEmpComponent,
-    UsersComponent,
-    AboutComponent,
-    ContactComponent,
-    EmployeeListComponent,
-    ReactiveFormsComponent,
-    UserComponent,
-    AddressComponent,
-    CompanyComponent,
-    LocationComponent,   
-    FeedbackComponent, AdduserComponent,AgGridComponent,CounterComponent,ViewchildComponent
+    AppComponent,DepartmentComponent,ShowDepComponent,AddEditDepComponent,EmployeeComponent,
+    ShowEmpComponent,AddEditEmpComponent,UsersComponent,AboutComponent,ContactComponent,
+    EmployeeListComponent,ReactiveFormsComponent,UserComponent,AddressComponent,
+    CompanyComponent,LocationComponent,FeedbackComponent, AdduserComponent,
+    AgGridComponent,CounterComponent,ViewchildComponent, HomeComponent, StatusComponent
+  
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
+    BrowserModule,AppRoutingModule,HttpClientModule,
+    FormsModule,ReactiveFormsModule,
     BrowserAnimationsModule,MatSnackBarModule,
-    MaterialModule,HooksModule,AngularCrudModule,AgGridModule
+    MaterialModule,HooksModule,AngularCrudModule,AgGridModule,NtEmpModule,AccessModule
   ],
   providers: [ { provide: ErrorHandler, useClass: GlobalErrorHandler },
                { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true },
                { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
                { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
+               { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
               SharedService,UsersService,MasterService,
               AuthGuard,AdminGuard,UnsavedChangesGuard,ResolveGuard             
             ],

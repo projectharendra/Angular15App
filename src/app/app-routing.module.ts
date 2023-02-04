@@ -21,10 +21,22 @@ import { ResolveGuard } from './guards/resolve.guard';
 import { HooksComponent } from './hooks/hooks/hooks.component';
 import { AgGridComponent } from './ag-grid/ag-grid/ag-grid.component';
 import { ViewchildComponent } from './viewchild/viewchild.component';
-// import { ProductDashboardComponent } from './product-dashboard/product-dashboard/product-dashboard.component';
+import { NtEmpComponent } from './nt-emp/nt-emp/nt-emp.component';
+// import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { NtEmplistingComponent } from './nt-emp/nt-emplisting/nt-emplisting.component';
+import { NtEmpaddComponent } from './nt-emp/nt-empadd/nt-empadd.component';
+import { StatusComponent } from './status/status.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:"users",pathMatch:"full"},
+  // {path:'',redirectTo:"home",pathMatch:"full"}, 
+  {path:'home',component:HomeComponent,canActivate:[AuthGuard]}, 
+  // {path:'login',component:LoginComponent}, 
+  {path:'ntech',component:NtEmpComponent,children:[
+    {path:'',component:NtEmplistingComponent}, 
+    {path:'create',component:NtEmpaddComponent},
+    {path:'edit/:id',component:NtEmpaddComponent},
+  ],canActivate:[AuthGuard]}, 
 
   {path:'users',component:UsersComponent, 
    resolve:{
@@ -50,9 +62,12 @@ const routes: Routes = [
   // {path:'product', loadChildren:'./product-dashboard/product-dashboard.module#ProductDashboardModule'},
   {path:'product', loadChildren: () => import('./product-dashboard/product-dashboard.module').then(x => x.ProductDashboardModule)},
   {path:'prcom', loadChildren: () => import('./parent-child-communication/parent-child-communication.module').then(x => x.ParentChildCommunicationModule)},
+  {path:"access",loadChildren:()=>import('./access/access.module').then(opt=>opt.AccessModule)},
+  {path:"login",loadComponent:()=>import('./login/login.component').then(opt=>opt.LoginComponent)},
   {path:'hooks',component:HooksComponent},
-   {path:'aggrid',component:AgGridComponent},
-   {path:'viewchild',component:ViewchildComponent},
+  {path:'aggrid',component:AgGridComponent},
+  {path:'viewchild',component:ViewchildComponent},
+  {path:'ntech',component:NtEmpComponent},
   {path:'about',component:AboutComponent,
   children:[   
     {path: 'location', outlet:'map', component:LocationComponent},
@@ -62,7 +77,7 @@ const routes: Routes = [
   // Implemented Unsaved changes confirmation of Add User page
   {path:'adduser',component:AdduserComponent, canDeactivate: [UnsavedChangesGuard]},
 
-   {path:'**',redirectTo:"users"}, //Invalid Route  
+  {path:"**",component:StatusComponent}, //Invalid Route  
   ];
 
 @NgModule({
