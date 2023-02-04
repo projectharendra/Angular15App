@@ -63,6 +63,7 @@ const routes: Routes = [
   {path:'product', loadChildren: () => import('./product-dashboard/product-dashboard.module').then(x => x.ProductDashboardModule)},
   {path:'prcom', loadChildren: () => import('./parent-child-communication/parent-child-communication.module').then(x => x.ParentChildCommunicationModule)},
   {path:"access",loadChildren:()=>import('./access/access.module').then(opt=>opt.AccessModule)},
+  {path:"admin",loadChildren:()=>import('./admin/admin.module').then(opt=>opt.AdminModule)},
   {path:"login",loadComponent:()=>import('./login/login.component').then(opt=>opt.LoginComponent)},
   {path:'hooks',component:HooksComponent},
   {path:'aggrid',component:AgGridComponent},

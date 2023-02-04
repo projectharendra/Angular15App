@@ -53,6 +53,7 @@ import { NtEmpModule } from './nt-emp/nt-emp.module';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { StatusComponent } from './status/status.component';
 import { AccessModule } from './access/access.module';
+import { AdminModule } from './admin/admin.module';
 
 
 
@@ -69,7 +70,8 @@ import { AccessModule } from './access/access.module';
     BrowserModule,AppRoutingModule,HttpClientModule,
     FormsModule,ReactiveFormsModule,
     BrowserAnimationsModule,MatSnackBarModule,
-    MaterialModule,HooksModule,AngularCrudModule,AgGridModule,NtEmpModule,AccessModule
+    MaterialModule,HooksModule,AngularCrudModule,AgGridModule,NtEmpModule,AccessModule,
+    AdminModule
   ],
   providers: [ { provide: ErrorHandler, useClass: GlobalErrorHandler },
                { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true },
