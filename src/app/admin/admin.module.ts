@@ -5,7 +5,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { UsermasterComponent } from './usermaster/usermaster.component';
 import { MaterialModule } from 'src/material-module';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { RoleGuard } from '../guards/role.guard';
 
 @NgModule({
   declarations: [
@@ -16,6 +16,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AdminRoutingModule,
     MaterialModule,
     ReactiveFormsModule
+  ],
+  providers:[
+   RoleGuard
   ]
 })
 export class AdminModule { }

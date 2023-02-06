@@ -54,6 +54,8 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
 import { StatusComponent } from './status/status.component';
 import { AccessModule } from './access/access.module';
 import { AdminModule } from './admin/admin.module';
+import { ModalpopupComponent } from './modalpopup/modalpopup.component';
+
 
 
 
@@ -61,9 +63,10 @@ import { AdminModule } from './admin/admin.module';
   declarations: [
     AppComponent,DepartmentComponent,ShowDepComponent,AddEditDepComponent,EmployeeComponent,
     ShowEmpComponent,AddEditEmpComponent,UsersComponent,AboutComponent,ContactComponent,
-    EmployeeListComponent,ReactiveFormsComponent,UserComponent,AddressComponent,
+    EmployeeListComponent,
+    ReactiveFormsComponent,UserComponent,AddressComponent,
     CompanyComponent,LocationComponent,FeedbackComponent, AdduserComponent,
-    AgGridComponent,CounterComponent,ViewchildComponent, HomeComponent, StatusComponent
+    AgGridComponent,CounterComponent,ViewchildComponent, HomeComponent, StatusComponent, ModalpopupComponent
   
   ],
   imports: [

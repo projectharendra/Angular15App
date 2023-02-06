@@ -27,9 +27,13 @@ import { HomeComponent } from './home/home.component';
 import { NtEmplistingComponent } from './nt-emp/nt-emplisting/nt-emplisting.component';
 import { NtEmpaddComponent } from './nt-emp/nt-empadd/nt-empadd.component';
 import { StatusComponent } from './status/status.component';
+import { RegisterComponent } from './access/register/register.component';
+import { Test1Component } from './lazy-loading/test1/test1.component';
+import { Test2Component } from './lazy-loading/test2/test2.component';
+import { Test3Component } from './lazy-loading/test3/test3.component';
 
 const routes: Routes = [
-  // {path:'',redirectTo:"home",pathMatch:"full"}, 
+   //{path:'',redirectTo:"login",pathMatch:"full"}, 
   {path:'home',component:HomeComponent,canActivate:[AuthGuard]}, 
   // {path:'login',component:LoginComponent}, 
   {path:'ntech',component:NtEmpComponent,children:[
@@ -54,7 +58,21 @@ const routes: Routes = [
     {path: 'company', component:CompanyComponent},
   ]},
 
-  {path:'employee-list',component:EmployeeListComponent},
+    {path:'employee-list',component:EmployeeListComponent},
+  /* {path:'employee-list',
+   loadComponent:()=> import('./employee-list/employee-list.component')
+   .then(res=>res.EmployeeListComponent)},
+ */
+{path:'test1',component:Test1Component,
+loadChildren:()=> import('./lazy-loading/lazy-loading.module')
+   .then(res=>res.LazyLoadingModule)},
+   {path:'test2',component:Test2Component,
+loadChildren:()=> import('./lazy-loading/lazy-loading.module')
+   .then(res=>res.LazyLoadingModule)},
+   {path:'test3',component:Test3Component,
+loadChildren:()=> import('./lazy-loading/lazy-loading.module')
+   .then(res=>res.LazyLoadingModule)},
+ 
   {path:'employee',component:EmployeeComponent},
   {path:'registration',component:ReactiveFormsComponent},
   {path:'department',component:DepartmentComponent},
@@ -62,7 +80,10 @@ const routes: Routes = [
   // {path:'product', loadChildren:'./product-dashboard/product-dashboard.module#ProductDashboardModule'},
   {path:'product', loadChildren: () => import('./product-dashboard/product-dashboard.module').then(x => x.ProductDashboardModule)},
   {path:'prcom', loadChildren: () => import('./parent-child-communication/parent-child-communication.module').then(x => x.ParentChildCommunicationModule)},
-  {path:"access",loadChildren:()=>import('./access/access.module').then(opt=>opt.AccessModule)},
+  // {path:"access",loadChildren:()=>import('./access/access.module').then(opt=>opt.AccessModule)},
+  {path:"access",component:RegisterComponent,
+  loadChildren:()=>import('./access/access.module').then(opt=>opt.AccessModule)},
+
   {path:"admin",loadChildren:()=>import('./admin/admin.module').then(opt=>opt.AdminModule)},
   {path:"login",loadComponent:()=>import('./login/login.component').then(opt=>opt.LoginComponent)},
   {path:'hooks',component:HooksComponent},

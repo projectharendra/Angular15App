@@ -8,18 +8,25 @@ import {
   HttpEvent,
   HttpInterceptor, HttpErrorResponse, HttpResponse
 } from '@angular/common/http';
-import { LoginService } from '../services/login.service';
-//import { Observable } from 'rxjs';
+//import { LoginService } from '../services/login.service';
+
+
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-  constructor(private inject: Injector) { }
+  //constructor(private inject: Injector) { }
+      //let authservice = this.inject.get(LoginService);
+  constructor() { }
+  token = localStorage.getItem('token');
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    let authservice = this.inject.get(LoginService);
+    
+    //let authservice = this.inject.get(LoginService);
+    let token = localStorage.getItem('token');
     let jwtToken = request.clone({
       setHeaders: {
-        Authorization: 'bearer ' + authservice.GetToken()
+        //Authorization: 'bearer ' + authservice.GetToken()
+        Authorization: 'bearer ' + this.token
       }
     });
     return next.handle(jwtToken);

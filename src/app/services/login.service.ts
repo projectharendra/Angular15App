@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { Buffer } from 'buffer'
 @Injectable({
   providedIn: 'root'
 })
@@ -39,6 +40,21 @@ export class LoginService {
   Registeration(inputdata: any) {
     return this.http.post('http://localhost:33115/api/Login/Register', inputdata);
   }
+
+  GetRole() {
+    var token = localStorage.getItem('token');
+    //console.log("token: " +JSON.parse(Buffer.from(token).toString()));
+
+    if (token != null) {     
+      var extractdata = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
+     // console.log("extractdata role: " +extractdata.role);
+      return extractdata.role;
+    }else{
+      return '';
+    }
+
+  }
+
 
   GetRefreshToken() {
     return localStorage.getItem("refreshtoken") || '';
