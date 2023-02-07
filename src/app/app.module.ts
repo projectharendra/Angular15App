@@ -55,6 +55,8 @@ import { StatusComponent } from './status/status.component';
 import { AccessModule } from './access/access.module';
 import { AdminModule } from './admin/admin.module';
 import { ModalpopupComponent } from './modalpopup/modalpopup.component';
+import { TemplateFormComponent } from './registration/template-form/template-form.component';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -66,7 +68,7 @@ import { ModalpopupComponent } from './modalpopup/modalpopup.component';
     EmployeeListComponent,
     ReactiveFormsComponent,UserComponent,AddressComponent,
     CompanyComponent,LocationComponent,FeedbackComponent, AdduserComponent,
-    AgGridComponent,CounterComponent,ViewchildComponent, HomeComponent, StatusComponent, ModalpopupComponent
+    AgGridComponent,CounterComponent,ViewchildComponent, HomeComponent, StatusComponent, ModalpopupComponent, TemplateFormComponent
   
   ],
   imports: [
@@ -74,7 +76,8 @@ import { ModalpopupComponent } from './modalpopup/modalpopup.component';
     FormsModule,ReactiveFormsModule,
     BrowserAnimationsModule,MatSnackBarModule,
     MaterialModule,HooksModule,AngularCrudModule,AgGridModule,NtEmpModule,AccessModule,
-    AdminModule
+    AdminModule,
+    //NgbModule.forRoot()
   ],
   providers: [ { provide: ErrorHandler, useClass: GlobalErrorHandler },
                { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true },

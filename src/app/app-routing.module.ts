@@ -31,6 +31,7 @@ import { RegisterComponent } from './access/register/register.component';
 import { Test1Component } from './lazy-loading/test1/test1.component';
 import { Test2Component } from './lazy-loading/test2/test2.component';
 import { Test3Component } from './lazy-loading/test3/test3.component';
+import { TemplateFormComponent } from './registration/template-form/template-form.component';
 
 const routes: Routes = [
    //{path:'',redirectTo:"login",pathMatch:"full"}, 
@@ -90,6 +91,7 @@ loadChildren:()=> import('./lazy-loading/lazy-loading.module')
   {path:'aggrid',component:AgGridComponent},
   {path:'viewchild',component:ViewchildComponent},
   {path:'ntech',component:NtEmpComponent},
+  {path:'templateform',component:TemplateFormComponent},
   {path:'about',component:AboutComponent,
   children:[   
     {path: 'location', outlet:'map', component:LocationComponent},
