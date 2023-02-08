@@ -1,9 +1,16 @@
 <h1>Angular Template Driven Form</h1>
-
-<form #userForm="ngForm" (ngSubmit)="onSubit(userForm.value)">
-    <input type="text"  name="email" ngModel>
-    <br><br>
-    <input type="password" name="password" ngModel>
-    <br><br>
-    <button type="submit">login</button>
-</form>
+<div class="col-sm-6">
+    <form #userForm="ngForm" (ngSubmit)="onSubit(userForm.value)">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1"  name="email" ngModel aria-describedby="emailHelp">
+         
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password" ngModel>
+        </div>
+     
+        <button type="submit" class="btn btn-primary">login</button>
+      </form>
+</div>
