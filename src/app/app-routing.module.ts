@@ -32,6 +32,9 @@ import { Test1Component } from './lazy-loading/test1/test1.component';
 import { Test2Component } from './lazy-loading/test2/test2.component';
 import { Test3Component } from './lazy-loading/test3/test3.component';
 import { TemplateFormComponent } from './registration/template-form/template-form.component';
+import { ListStudentComponent } from './student/list-student/list-student.component';
+import { AddStudentComponent } from './student/add-student/add-student.component';
+import { EditStudentComponent } from './student/edit-student/edit-student.component';
 
 const routes: Routes = [
    //{path:'',redirectTo:"login",pathMatch:"full"}, 
@@ -73,6 +76,17 @@ loadChildren:()=> import('./lazy-loading/lazy-loading.module')
    {path:'test3',component:Test3Component,
 loadChildren:()=> import('./lazy-loading/lazy-loading.module')
    .then(res=>res.LazyLoadingModule)},
+
+   {path:'liststudent',component:ListStudentComponent,
+   loadChildren:()=> import('./student/student.module')
+      .then(res=>res.StudentModule)},
+  {path:'addstudent',component:AddStudentComponent,
+  loadChildren:()=> import('./student/student.module')
+      .then(res=>res.StudentModule)},
+      
+  {path:'editstudent/:id',component:EditStudentComponent,
+  loadChildren:()=> import('./student/student.module')
+      .then(res=>res.StudentModule)},
  
   {path:'employee',component:EmployeeComponent},
   {path:'registration',component:ReactiveFormsComponent},

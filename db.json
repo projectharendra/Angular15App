@@ -1,9 +1,39 @@
 {
-  "posts": [
+  "students": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "student 1",
+      "email": "student1@gmail.com"
+    },
+    {
+      "name": "student 2",
+      "email": "student2@gmail.com",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "student 3",
+      "email": "student3@gmail.com"
+    },
+    {
+      "name": "student 44",
+      "email": "student44@gmail.com",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "student 5",
+      "email": "student5@gmail.com"
+    },
+    {
+      "id": 6,
+      "name": "student 6",
+      "email": "student6@gmail.com"
+    },
+    {
+      "name": "student 2",
+      "email": "student2@gmail.com",
+      "id": 7
     }
   ],
   "comments": [
