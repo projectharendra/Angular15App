@@ -56,6 +56,7 @@ import { AccessModule } from './access/access.module';
 import { AdminModule } from './admin/admin.module';
 import { ModalpopupComponent } from './modalpopup/modalpopup.component';
 import { TemplateFormComponent } from './registration/template-form/template-form.component';
+import { ToastrModule } from 'ngx-toastr';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -78,7 +79,9 @@ import { TemplateFormComponent } from './registration/template-form/template-for
     BrowserAnimationsModule,MatSnackBarModule,
     MaterialModule,HooksModule,AngularCrudModule,AgGridModule,NtEmpModule,AccessModule,
     AdminModule,
-    //NgbModule.forRoot()
+    ToastrModule.forRoot({
+      positionClass :'toast-bottom-right'
+    })
   ],
   providers: [ { provide: ErrorHandler, useClass: GlobalErrorHandler },
                { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true },

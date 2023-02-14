@@ -35,6 +35,8 @@ import { TemplateFormComponent } from './registration/template-form/template-for
 import { ListStudentComponent } from './student/list-student/list-student.component';
 import { AddStudentComponent } from './student/add-student/add-student.component';
 import { EditStudentComponent } from './student/edit-student/edit-student.component';
+import { ListInvoiceComponent } from './invoice/list-invoice/list-invoice.component';
+import { CreateInvoiceComponent } from './invoice/create-invoice/create-invoice.component';
 
 const routes: Routes = [
    //{path:'',redirectTo:"login",pathMatch:"full"}, 
@@ -82,12 +84,21 @@ loadChildren:()=> import('./lazy-loading/lazy-loading.module')
       .then(res=>res.StudentModule)},
   {path:'addstudent',component:AddStudentComponent,
   loadChildren:()=> import('./student/student.module')
-      .then(res=>res.StudentModule)},
-      
+      .then(res=>res.StudentModule)},      
   {path:'editstudent/:id',component:EditStudentComponent,
   loadChildren:()=> import('./student/student.module')
       .then(res=>res.StudentModule)},
  
+  {path:'listinvoice',component:ListInvoiceComponent,
+  loadChildren:()=> import('./invoice/invoice.module')
+      .then(res=>res.InvoiceModule)},
+  {path:'addinvoice',component:CreateInvoiceComponent,
+  loadChildren:()=> import('./invoice/invoice.module')
+      .then(res=>res.InvoiceModule)},
+  {path:'editinvoice/:invoiceno',component:CreateInvoiceComponent,
+  loadChildren:()=> import('./invoice/invoice.module')
+      .then(res=>res.InvoiceModule)},    
+
   {path:'employee',component:EmployeeComponent},
   {path:'registration',component:ReactiveFormsComponent},
   {path:'department',component:DepartmentComponent},
