@@ -30,7 +30,7 @@ export class AppComponent implements OnInit, DoCheck{
     else{
       this.isMenuVisible=true;
     }
-console.log(this.service.GetRole());
+    console.log(this.service.GetRole());
     if (this.service.GetRole() == 'admin') {
       this.isadmin = true;
     }else{

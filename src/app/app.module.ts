@@ -57,6 +57,7 @@ import { AdminModule } from './admin/admin.module';
 import { ModalpopupComponent } from './modalpopup/modalpopup.component';
 import { TemplateFormComponent } from './registration/template-form/template-form.component';
 import { ToastrModule } from 'ngx-toastr';
+import { PdfGeneratorComponent } from './pdf-generator/pdf-generator.component';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -70,7 +71,7 @@ import { ToastrModule } from 'ngx-toastr';
     EmployeeListComponent,
     ReactiveFormsComponent,UserComponent,AddressComponent,
     CompanyComponent,LocationComponent,FeedbackComponent, AdduserComponent,
-    AgGridComponent,CounterComponent,ViewchildComponent, HomeComponent, StatusComponent, ModalpopupComponent, TemplateFormComponent
+    AgGridComponent,CounterComponent,ViewchildComponent, HomeComponent, StatusComponent, ModalpopupComponent, TemplateFormComponent, PdfGeneratorComponent
   
   ],
   imports: [

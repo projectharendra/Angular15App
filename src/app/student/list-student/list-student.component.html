@@ -1,5 +1,9 @@
-<div class="container col-md-6">
+<button (click)="printData()">Export to PDF</button>
+<div class="container col-md-6" id="divGeneratePDF">
 <br><br>
+<div style="float:left"> 
+  <a class="btn btn-primary" (click)="generatePdfFile()">Generate PDF</a>
+</div>
 <div style="float:right"> 
   <a class="btn btn-primary" routerLink="../addstudent">Add Student</a>
 </div>

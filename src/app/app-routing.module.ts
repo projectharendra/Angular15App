@@ -37,6 +37,7 @@ import { AddStudentComponent } from './student/add-student/add-student.component
 import { EditStudentComponent } from './student/edit-student/edit-student.component';
 import { ListInvoiceComponent } from './invoice/list-invoice/list-invoice.component';
 import { CreateInvoiceComponent } from './invoice/create-invoice/create-invoice.component';
+import { PdfGeneratorComponent } from './pdf-generator/pdf-generator.component';
 
 const routes: Routes = [
    //{path:'',redirectTo:"login",pathMatch:"full"}, 
@@ -114,6 +115,7 @@ loadChildren:()=> import('./lazy-loading/lazy-loading.module')
   {path:"login",loadComponent:()=>import('./login/login.component').then(opt=>opt.LoginComponent)},
   {path:'hooks',component:HooksComponent},
   {path:'aggrid',component:AgGridComponent},
+  {path:"pdf",component:PdfGeneratorComponent},
   {path:'viewchild',component:ViewchildComponent},
   {path:'ntech',component:NtEmpComponent},
   {path:'templateform',component:TemplateFormComponent},
