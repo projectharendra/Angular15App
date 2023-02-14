@@ -41,6 +41,10 @@ generatePdfFile()
   let pdf = new jsPDF;
   pdf.text("Hello OSTechHelp",10,10)
   pdf.save();
+
+
+
+  
 }  
 printData()
 {  
