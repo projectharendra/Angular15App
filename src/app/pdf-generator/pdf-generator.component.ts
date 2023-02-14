@@ -9,7 +9,6 @@ import * as XLSX from 'xlsx';
 export class PdfGeneratorComponent implements OnInit{ 
 //Export to pdf
 //https://www.youtube.com/watch?v=hz_u1qv6P64
-
 //Export to excel
 //https://jsonworld.com/demo/how-to-export-data-to-excel-file-in-angular-application
 
