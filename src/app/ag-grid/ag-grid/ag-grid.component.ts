@@ -15,7 +15,7 @@ export class AgGridComponent implements OnInit {
   
 
 //rowData1!: Observable<any[]>;
-rowData: any[];
+rowData: any=[];
 
   colDefs: ColDef[] = 
   [
@@ -40,6 +40,7 @@ ngOnInit(): void {
 refreshAgGridData(){
   this.service.getAllDataForAgGrid().subscribe(data=>{
     this.rowData=data;
+    console.log("aa" + this.rowData);
   });
 
 

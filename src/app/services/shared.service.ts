@@ -8,6 +8,8 @@ import {Observable} from 'rxjs';
 export class SharedService {
   readonly APIUrl="http://localhost:33115/api";
   readonly PhotoUrl = "http://localhost:33115/Photos/";
+
+  readonly CompanyAPIUrl="http://localhost:3000/company";
   
   constructor(private http:HttpClient) { }
 
@@ -53,8 +55,8 @@ export class SharedService {
     return this.http.get<any[]>(this.APIUrl+'/Employee/GetAllDepartmentNames');
   }
 
-  getAllDataForAgGrid():Observable<any[]>{
-    return this.http.get<any[]>('https://www.ag-grid.com/example-assets/row-data.json');
+  getAllDataForAgGrid():Observable<any>{
+    return this.http.get(this.CompanyAPIUrl);
   }
 
 
